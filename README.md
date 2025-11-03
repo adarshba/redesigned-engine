@@ -242,16 +242,34 @@ See [docs/BEST_PRACTICES.md](docs/BEST_PRACTICES.md) for comprehensive guideline
 - [n8n Documentation](https://docs.n8n.io/)
 - [n8n Community Forum](https://community.n8n.io/)
 - [n8n GitHub Repository](https://github.com/n8n-io/n8n)
+- [Node Reference](https://docs.n8n.io/integrations/)
 
-### Tutorials
-- [Getting Started with n8n](https://docs.n8n.io/getting-started/)
-- [Creating Your First Workflow](https://docs.n8n.io/workflows/workflows/)
-- [Understanding Nodes](https://docs.n8n.io/workflows/nodes/)
+### Video Tutorials
+- [n8n Quick Start Guide](https://www.youtube.com/watch?v=RpjQTGKm-ok) - Official getting started video
+- [Docker Installation Tutorial](https://www.youtube.com/watch?v=JwKf8f6W3eY) - Setting up n8n with Docker
+- [Creating Your First Workflow](https://www.youtube.com/watch?v=BL4dLqB-UJs) - Step-by-step workflow creation
+- [Webhook Workflows](https://www.youtube.com/watch?v=3w7xIMKLVAg) - Working with webhooks in n8n
+- [n8n Full Course](https://www.youtube.com/watch?v=1MwSoB0gnM4) - Complete beginner to advanced tutorial
+- [YouTube Channel](https://www.youtube.com/@n8n-io) - Official n8n channel with latest videos
 
-### Community
-- [Discord Server](https://discord.gg/n8n)
-- [YouTube Channel](https://www.youtube.com/c/n8n-io)
-- [Twitter](https://twitter.com/n8n_io)
+### Learning Paths
+- [Getting Started with n8n](https://docs.n8n.io/getting-started/) - Official quick start guide
+- [Workflow Examples](https://n8n.io/workflows) - Community-contributed workflow templates
+- [Creating Your First Workflow](https://docs.n8n.io/workflows/workflows/) - Workflow basics
+- [Understanding Nodes](https://docs.n8n.io/workflows/nodes/) - Node concepts and usage
+- [Expressions and Variables](https://docs.n8n.io/code-examples/expressions/) - Working with data
+
+### Community & Support
+- [Discord Server](https://discord.gg/n8n) - Active community support and discussions
+- [Community Forum](https://community.n8n.io/) - Ask questions and share knowledge
+- [Twitter](https://twitter.com/n8n_io) - Latest updates and announcements
+- [Reddit r/n8n](https://www.reddit.com/r/n8n/) - Community discussions
+
+### Additional Resources
+- [n8n Blog](https://blog.n8n.io/) - Tutorials, use cases, and updates
+- [Workflow Templates](https://n8n.io/workflows) - Browse 1000+ ready-to-use workflows
+- [API Documentation](https://docs.n8n.io/api/) - n8n API reference
+- [Self-Hosting Guide](https://docs.n8n.io/hosting/) - Production deployment guide
 
 ## 🤝 Contributing
 
