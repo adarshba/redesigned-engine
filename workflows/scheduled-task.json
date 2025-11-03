@@ -1,0 +1,167 @@
+{
+  "name": "Scheduled Task Example",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 9 * * *"
+            }
+          ]
+        }
+      },
+      "name": "Cron Schedule",
+      "type": "n8n-nodes-base.cron",
+      "typeVersion": 1,
+      "position": [
+        250,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "task_name",
+              "value": "Daily Report Generation"
+            },
+            {
+              "name": "execution_time",
+              "value": "={{$now.toISO()}}"
+            },
+            {
+              "name": "day_of_week",
+              "value": "={{$now.format('dddd')}}"
+            },
+            {
+              "name": "message",
+              "value": "This workflow runs daily at 9:00 AM"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Prepare Data",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        450,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{$now.weekday()}}",
+              "operation": "notEqual",
+              "value2": "0"
+            },
+            {
+              "value1": "={{$now.weekday()}}",
+              "operation": "notEqual",
+              "value2": "6"
+            }
+          ]
+        }
+      },
+      "name": "Check if Weekday",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        650,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "result",
+              "value": "Task executed on weekday"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Weekday Task",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        850,
+        200
+      ]
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "result",
+              "value": "Skipped - Weekend"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Weekend Skip",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [
+        850,
+        400
+      ]
+    }
+  ],
+  "connections": {
+    "Cron Schedule": {
+      "main": [
+        [
+          {
+            "node": "Prepare Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare Data": {
+      "main": [
+        [
+          {
+            "node": "Check if Weekday",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check if Weekday": {
+      "main": [
+        [
+          {
+            "node": "Weekday Task",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Weekend Skip",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "versionId": "3",
+  "id": "3"
+}
